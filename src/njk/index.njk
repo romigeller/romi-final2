@@ -10,55 +10,31 @@
     </div>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in facilisis velit, aliquam congue dui. Mauris id mi quam. Nam enim leo, bibendum vel efficitur id, elementum malesuada est. Pellentesque interdum tempus eros nec iaculis. Quisque ac est dictum, vehicula nulla quis, condimentum dui.</p>
     <h2>MEMBERS</h2>
-    <p>This loops through data that came from a Google Docs example.</p>
-    <div class="row row-cols-1 row-cols-md-2">
-      <div class="col mb-4">
-        <div class="card">
-          <img src="..." class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">
-              <h1>{{ name }}</h1>
-              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col mb-4">
-          <div class="card">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col mb-4">
-          <div class="card">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col mb-4">
-          <div class="card">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            </div>
-          </div>
+    <div class="row">
+      {% for description in queen.members %}
+        <div class="col">
+          <h5 class="card title">{{description.name}}</h5>
+          <a href="member/{{ description.slug }}.html">Read More</a>
+        </h3>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+<h2>Discography</h2>
+<hr>
+<div class="row">
+  {% for albums in queen.discography %}
+    <div class="col-sm-6 col-lg-4">
+      <div class="card mb-4 bg-light border-success">
+        <div class="card-body">
+          <h5 class="card title">{{albums.title}}</h5>
+          <h6 class="card-title">{{albums.year}}</h6>
+          <p class="card-image">{{albums.image}}</p>
+          <a href="{{ queen.source }}" target="blank">Source</a>
         </div>
       </div>
-      <h2>DISCOGRAPHY</h2>
-      <div class="row">
-        {% for albums in queen.discography %}
-          <div class="col-sm-3">
-            <h2>
-              {{ albums.title }}
-              <h2>
-                <img class="img-fluid" src="img/discography/queen.jpg" alt="">
-                <a href="{{ queen.source }} " target="blank">Source</a>
-              </div>
-            {% endfor %}
-          {% endblock %}
+    </div>
+    <hr>
+  {% endfor %}
+</div>
+{% endblock %}
