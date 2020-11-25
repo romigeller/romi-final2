@@ -5,22 +5,22 @@
 {% block page_description %}The discography page.{% endblock %}
 
 {% block content %}
-  <h2>Discography</h2>
-  <p>Here is a collection of Queen's discography.</p>
-  <hr>
-  <div class="row">
-    {% for albums in queen.discography %}
-      <div class="col-sm-6 col-lg-4">
-        <div class="card mb-4 bg-light border-success">
-          <div class="card-body">
-            <h5 class="card title">{{albums.title}}</h5>
-            <h6 class="card-title">{{albums.year}}</h6>
-            <p class="card-image">{{albums.image}}</p>
-            <a href="{{ queen.source }}" target="blank">Source</a>
+  <div class="container">
+    <h2>Discography</h2>
+    <p>Here is a collection of Queen's discography.</p>
+    <hr>
+    <div class="row">
+      {% for albums in queen.discography %}
+        <div class="col-sm-6 col-lg-4">
+          <div class="card mb-4 bg-light border-success">
+            <img class="card-img-top" src="img/discs/{{albums.image}}" alt="">
+            <div class="card-body">
+              <h5 class="card-title">{{ albums.title }}</h5>
+              <h6 class="card-title">{{ albums.year }}</h6>
+            </div>
           </div>
         </div>
-      </div>
-      <hr>
-    {% endfor %}
-  </div>
+      {% endfor %}
+    </div>
+  </article>
 {% endblock %}

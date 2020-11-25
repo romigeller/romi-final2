@@ -1,40 +1,35 @@
 {% extends '_templates/base.njk' %}
 {% block content %}
   <div class="container">
-    <div class="jumbotron jumbotron-fluid">
-      <div class="container">
-        <h1 class="display-4">THE QUEEN FAN PAGE</h1>
-        <p class="lead">Everything you need to know about the best band in the world.
-        </p>
-      </div>
-    </div>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in facilisis velit, aliquam congue dui. Mauris id mi quam. Nam enim leo, bibendum vel efficitur id, elementum malesuada est. Pellentesque interdum tempus eros nec iaculis. Quisque ac est dictum, vehicula nulla quis, condimentum dui.</p>
-    <h2>MEMBERS</h2>
+    <h2>Original Band Members</h2>
     <div class="row">
-      {% for description in queen.members %}
-        <div class="col">
-          <h5 class="card title">{{description.name}}</h5>
-          <a href="member/{{ description.slug }}.html">Read More</a>
-        </h3>
-      </div>
-    {% endfor %}
-  </div>
-</div>
-<h2>Discography</h2>
-<hr>
-<div class="row">
-  {% for albums in queen.discography %}
-    <div class="col-sm-6 col-lg-4">
-      <div class="card mb-4 bg-light border-success">
-        <div class="card-body">
-          <h5 class="card title">{{albums.title}}</h5>
-          <h6 class="card-title">{{albums.year}}</h6>
-          <p class="card-image">{{albums.image}}</p>
-          <a href="discography.html">Source</a>
+      {% for member in queen.members %}
+        <div class="col-sm-6">
+          <img src="img/members/{{ member.slug }}-bw.jpg" alt="" class="img-fluid">
+          <h3>
+            <a href="member/{{ member.slug }}.html">{{ member.name }}</a>
+          </h3>
         </div>
-      </div>
+      {% endfor %}
     </div>
+  </div>
+  <div class="container">
+    <h2>Discography</h2>
     <hr>
-  {% endfor %}
-</div>
-{% endblock %}
+    <div class="row">
+      {% for albums in queen.discography %}
+        <div class="col-sm-6 col-lg-4">
+          <div class="card mb-4 bg-light border-success">
+            <div class="card-body">
+              <h5 class="card title">{{albums.title}}</h5>
+              <h6 class="card-title">{{albums.year}}</h6>
+              <a href="discography.html">Source</a>
+              <img class="card-img-top" src="img/discs/{{albums.image}}" alt="">
+            </div>
+          </div>
+        </div>
+        <hr>
+      {% endfor %}
+    </div>
+  {% endblock %}

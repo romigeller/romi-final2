@@ -1,11 +1,19 @@
 .jumbotron.banner {
-  background: url(../img/pirate-ship.jpg) no-repeat center;
+  background: url(../img/queen-live-on-stage.jpg) no-repeat center;
   background-size: cover;
+  padding-top: 12rem;
   color: white;
-  padding-top: 12rem
 }
 
-.jumbotron {
-  margin-bottom: 30px;
-  background-image: src="img/queen-band-early.jpg";
+
+.jumbotron h1 {
+  font-size: 100px;
+  font-family: "Times New Roman", Times, serif;
+
+}
+
+.jumbotron p {
+  font-size: 40px;
+  font-family: "Times New Roman", Times, serif;
+
 }

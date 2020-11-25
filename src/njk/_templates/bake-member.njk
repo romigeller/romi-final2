@@ -8,13 +8,14 @@
 {% block page_description %}{{ title }}
   by
   {{ author }}
-{% endblock %}
+{% endblock %}>
 
 {% block content %}
+  <div class="container"></div>
   <article class="container">
     <div class="row">
       <div class="col-sm-4">
-        <img src="../img/{{ slug }}.jpg" alt="" class="img-fluid mb-4">
+        <img src="/img/members/{{ image }}" alt="queen member" class="img-fluid mb-4">
       </div>
       <div class="col-sm-8">
         <h1>{{ name }}</h1>
