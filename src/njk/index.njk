@@ -1,11 +1,16 @@
 {% extends '_templates/base.njk' %}
+{% block page_title %}Home{% endblock %}
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=New+Rocker&display=swap');
+</style>
+
 {% block content %}
   <div class="container">
     <h3 class="lede">Queen are a British rock band formed in London in 1970. Their classic line-up was Freddie Mercury (lead vocals, piano), Brian May (guitar, vocals), Roger Taylor (drums, vocals) and John Deacon (bass). Their earliest works were influenced by progressive rock, hard rock and heavy metal, but the band gradually ventured into more conventional and radio-friendly works by incorporating further styles, such as arena rock and pop rock.</h3>
     <h2>Original Band Members</h2>
     <div class="row">
       {% for member in queen.members %}
-        <div class="col-sm-6">
+        <div class="col-lg-4">
           <img src="img/members/{{ member.slug }}-bw.jpg" alt="" class="img-fluid">
           <h3>
             <a href="member/{{ member.slug }}.html">{{ member.name }}</a>
